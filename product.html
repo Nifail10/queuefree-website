@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product — QueueFree</title>
+    <meta name="description"
+        content="QueueFree system architecture: patient-side token booking and queue tracking, hospital-side dashboard and queue management." />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        .arch-side {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+        }
+
+        .arch-side__label {
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            color: var(--text-on-dark-m);
+            padding-bottom: var(--space-xs);
+            border-bottom: 1px solid var(--border-dark);
+            margin-bottom: var(--space-xs);
+        }
+
+        .section--light .arch-side__label,
+        .section--light-alt .arch-side__label {
+            color: var(--text-on-lite-m);
+            border-bottom-color: var(--border-light);
+        }
+
+        .arch-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.875rem;
+            padding: 1rem 1rem;
+            border-radius: var(--radius-md);
+            transition: border-color var(--transition);
+        }
+
+        .section--dark .arch-step {
+            background: var(--bg-card-dark);
+            border: 1px solid var(--border-dark);
+        }
+
+        .section--dark .arch-step:hover {
+            border-color: rgba(43, 191, 143, 0.22);
+        }
+
+        .section--light .arch-step,
+        .section--light-alt .arch-step {
+            background: rgba(13, 47, 63, 0.05);
+            border: 1px solid var(--border-light);
+        }
+
+        .section--light .arch-step:hover,
+        .section--light-alt .arch-step:hover {
+            border-color: rgba(43, 191, 143, 0.25);
+        }
+
+        .arch-step__num {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--green-ghost-dark);
+            color: var(--green);
+            font-size: 0.72rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-sans);
+            margin-top: 2px;
+        }
+
+        .arch-step__text h4 {
+            font-family: var(--font-sans);
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .section--dark .arch-step__text h4 {
+            color: var(--text-on-dark-h);
+        }
+
+        .section--light .arch-step__text h4,
+        .section--light-alt .arch-step__text h4 {
+            color: var(--text-on-lite-h);
+        }
+
+        .arch-step__text p {
+            font-size: 0.82rem;
+            line-height: 1.6;
+        }
+
+        .section--dark .arch-step__text p {
+            color: var(--text-on-dark-b);
+        }
+
+        .section--light .arch-step__text p,
+        .section--light-alt .arch-step__text p {
+            color: var(--text-on-lite-b);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="nav">
+        <a href="index.html" class="nav__logo">
+            <svg class="nav__logo-icon" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="38" cy="26" r="5" fill="white" opacity="0.85" />
+                <circle cx="82" cy="26" r="5" fill="white" opacity="0.85" />
+                <path
+                    d="M38 26 C38 18 82 18 82 26 C82 36 92 48 92 68 C92 90 76 106 60 108 C44 106 28 90 28 68 C28 48 38 36 38 26 Z"
+                    stroke="white" stroke-width="5.5" fill="none" stroke-linejoin="round" stroke-linecap="round" />
+                <path d="M42 68 L55 82 L78 54" stroke="#2BBF8F" stroke-width="7" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+            QueueFree
+        </a>
+        <ul class="nav__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="problem.html">Problem</a></li>
+            <li><a href="solution.html">Solution</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="pilot.html">Pilot</a></li>
+            <li><a href="contact.html" class="nav-cta">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="page-offset">
+
+        <!-- Page Hero -->
+        <section class="page-hero section--dark">
+            <div class="container">
+                <p class="section__label fade-in">Product Architecture</p>
+                <h1 class="fade-in fade-in--delay-1">Two interfaces.<br />One system.</h1>
+                <p class="fade-in fade-in--delay-2"
+                    style="max-width: 520px; margin-top: var(--space-md); font-size: 1.05rem;">
+                    QueueFree operates through two distinct interfaces — one for patients, one for hospital staff —
+                    connected by a shared, real-time queue state.
+                </p>
+            </div>
+        </section>
+
+        <!-- Architecture Grid -->
+        <section class="section--light">
+            <div class="container">
+                <div class="grid-2" style="gap: var(--space-xl); align-items: start;">
+
+                    <!-- Patient Side -->
+                    <div class="observe-fade">
+                        <div class="arch-side">
+                            <p class="arch-side__label">Patient Side</p>
+
+                            <div class="arch-step">
+                                <div class="arch-step__num">1</div>
+                                <div class="arch-step__text">
+                                    <h4>Search Hospital</h4>
+                                    <p>Patients search for their hospital by name or location to access its live queue
+                                        system.</p>
+                                </div>
+                            </div>
+
+                            <div class="arch-step">
+                                <div class="arch-step__num">2</div>
+                                <div class="arch-step__text">
+                                    <h4>View Doctors &amp; Departments</h4>
+                                    <p>See which doctors are available, which departments are active, and their current
+                                        queue state.</p>
+                                </div>
+                            </div>
+
+                            <div class="arch-step">
+                                <div class="arch-step__num">3</div>
+                                <div class="arch-step__text">
+                                    <h4>See Live Patient Load</h4>
+                                    <p>View how many patients are ahead in a given queue before committing to it.</p>
+                                </div>
+                            </div>
+
+                            <div class="arch-step">
+                                <div class="arch-step__num">4</div>
+                                <div class="arch-step__text">
+                                    <h4>Book Token</h4>
+                                    <p>Claim a numbered token in the queue. The system records position and issues a
+                                        confirmation.</p>
+                                </div>
+                            </div>
+
+                            <div class="arch-step">
+                                <div class="arch-step__num">5</div>
+                                <div class="arch-step__text">
+                                    <h4>Track Real-Time Queue</h4>
+                                    <p>Live view of the current token being served, the patient's position, and updated
+                                        wait-time estimate.</p>
+                                </div>
+                            </div>
+
+                            <div class="arch-step">
+                                <div class="arch-step__num">6</div>
+                                <div class="arch-step__text">
+                                    <h4>Receive Delay Alerts</h4>
+                                    <p>When a doctor marks a delay, the patient is notified immediately via app update
+                                        or SMS fallback.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Hospital Side -->
+                    <div class="observe-fade">
+                        <div class="arch-side">
+                            <p class="arch-side__label">Hospital Side</p>
+
+                            <div class="arch-step">
+                                <div class="arch-step__num">1</div>
+                                <div class="arch-step__text">
+                                    <h4>Dashboard</h4>
+                                    <p>A single-screen operational view: all queues, current tokens, patient load by
+                                        department, and active delays.</p>
+                                </div>
+                            </div>
+
+                            <div class="arch-step">
+                                <div class="arch-step__num">2</div>
+                                <div class="arch-step__text">
+                                    <h4>Call Next Patient</h4>
+                                    <p>Staff advance the queue with a single action. The system updates all patient
+                                        views instantly.</p>
+                                </div>
+                            </div>
+
+                            <div class="arch-step">
+                                <div class="arch-step__num">3</div>
+                                <div class="arch-step__text">
+                                    <h4>Mark Delay</h4>
+                                    <p>Doctors or staff log a delay with estimated duration. Patients are notified and
+                                        wait-time estimates recalculate.</p>
+                                </div>
+                            </div>
+
+                            <div class="arch-step">
+                                <div class="arch-step__num">4</div>
+                                <div class="arch-step__text">
+                                    <h4>View Queue Depth</h4>
+                                    <p>Real-time count of tokens issued, patients served, and patients remaining for any
+                                        queue at any time.</p>
+                                </div>
+                            </div>
+
+                            <div class="arch-step">
+                                <div class="arch-step__num">5</div>
+                                <div class="arch-step__text">
+                                    <h4>Manage Structured Priority</h4>
+                                    <p>Insert priority tokens for elderly, differently-abled, or urgent cases through a
+                                        structured protocol that maintains queue integrity.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Statement -->
+        <section class="section--dark statement observe-fade">
+            <div class="container">
+                <p class="statement__text">
+                    Both interfaces operate off a single source of truth — the live queue state. <em>Updates by staff
+                        are reflected to patients in real time, with no manual synchronisation.</em>
+                </p>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section--light section--compact">
+            <div class="container"
+                style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-md);">
+                <div>
+                    <p class="section__label observe-fade">Early Access</p>
+                    <h3 class="observe-fade" style="font-size: 1.55rem;">Join our first hospital pilot.</h3>
+                </div>
+                <a href="pilot.html" class="btn btn--primary observe-fade">View Pilot Program →</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <span class="footer__logo">
+                    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="38" cy="26" r="5" fill="white" opacity="0.5" />
+                        <circle cx="82" cy="26" r="5" fill="white" opacity="0.5" />
+                        <path
+                            d="M38 26 C38 18 82 18 82 26 C82 36 92 48 92 68 C92 90 76 106 60 108 C44 106 28 90 28 68 C28 48 38 36 38 26 Z"
+                            stroke="white" stroke-width="6" fill="none" opacity="0.4" stroke-linejoin="round"
+                            stroke-linecap="round" />
+                        <path d="M42 68 L55 82 L78 54" stroke="#2BBF8F" stroke-width="7" stroke-linecap="round"
+                            stroke-linejoin="round" opacity="0.6" />
+                    </svg>
+                    QueueFree
+                </span>
+                <span class="footer__copy">© 2026 QueueFree. Healthcare Infrastructure.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
