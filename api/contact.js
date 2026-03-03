@@ -21,9 +21,10 @@ export default async function handler(req, res) {
 
   try {
     await transporter.sendMail({
-      from: process.env.EMAIL_USER,
+      from: `"QueueFree Contact" <${process.env.EMAIL_USER}>`,
       to: "support@queuefreehealth.com",
-      subject: `New Contact Form Submission`,
+      subject: "New QueueFree Contact Submission",
+      replyTo: email,
       text: `
 Name: ${name}
 Email: ${email}
@@ -36,6 +37,6 @@ ${message}
     return res.status(200).json({ success: true });
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ message: "Email failed" });
+    return res.status(500).json({ message: "Email failed to send" });
   }
 }
