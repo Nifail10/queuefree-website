@@ -45,24 +45,13 @@
     });
   }
 
-  /* ── Contact Form ─────────────────────── */
-  function initContactForm() {
-    const form = document.getElementById('contactForm');
-    if (!form) return;
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const btn = form.querySelector('button[type="submit"]');
-      btn.textContent = 'Message Sent';
-      btn.disabled = true;
-      btn.style.opacity = '0.6';
-    });
-  }
+
 
   /* ── Init ─────────────────────────────── */
   document.addEventListener('DOMContentLoaded', function () {
     setActiveNav();
     initNavScroll();
     initFadeObserver();
-    initContactForm();
+
   });
 })();
