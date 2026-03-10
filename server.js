@@ -123,6 +123,19 @@ app.post("/api/intern-application", async (req, res) => {
     return res.status(400).json({ error: "Invalid email address." });
   }
 
+  // LinkedIn: optional; normalize and validate only if non-empty
+  let normalizedLinkedIn = (linkedIn || "").trim();
+  if (normalizedLinkedIn) {
+    if (!/^https?:\/\//i.test(normalizedLinkedIn)) {
+      normalizedLinkedIn = "https://" + normalizedLinkedIn;
+    }
+    if (normalizedLinkedIn.indexOf("linkedin.com/in/") === -1) {
+      return res.status(400).json({ error: "Invalid LinkedIn profile URL." });
+    }
+  } else {
+    normalizedLinkedIn = null;
+  }
+
   // Nodemailer transport configuration using SMTP_* environment variables
   // These must be set in a .env file for the server to send emails.
   const transporter = nodemailer.createTransport({
@@ -155,7 +168,7 @@ app.post("/api/intern-application", async (req, res) => {
     `- Expected Duration: ${duration || "Not specified"}`,
     "",
     "Links",
-    `- LinkedIn: ${linkedIn || "Not provided"}`,
+    `- LinkedIn: ${normalizedLinkedIn || "Not provided"}`,
     `- GitHub / Portfolio: ${github || "Not provided"}`,
     "",
     "Statement",
