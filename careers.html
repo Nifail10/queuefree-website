@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Careers — QueueFree</title>
+    <meta name="description"
+        content="Internship opportunities at QueueFree for students who want to work on real healthcare infrastructure problems in Indian hospitals." />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        .intern-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.3fr);
+            gap: var(--space-xl);
+            align-items: flex-start;
+        }
+
+        @media (max-width: 900px) {
+            .intern-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .intern-group {
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: var(--space-md);
+            margin-bottom: var(--space-md);
+        }
+
+        .intern-group:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .intern-group__label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-on-lite-m);
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="nav">
+        <a href="index.html" class="nav__logo">
+            <svg class="nav__logo-icon" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="38" cy="26" r="5" fill="white" opacity="0.85" />
+                <circle cx="82" cy="26" r="5" fill="white" opacity="0.85" />
+                <path
+                    d="M38 26 C38 18 82 18 82 26 C82 36 92 48 92 68 C92 90 76 106 60 108 C44 106 28 90 28 68 C28 48 38 36 38 26 Z"
+                    stroke="white" stroke-width="5.5" fill="none" stroke-linejoin="round" stroke-linecap="round" />
+                <path d="M42 68 L55 82 L78 54" stroke="#2BBF8F" stroke-width="7" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+            QueueFree
+        </a>
+        <ul class="nav__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="problem.html">Problem</a></li>
+            <li><a href="solution.html">Solution</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="pilot.html">Pilot</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html" class="nav-cta">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="page-offset">
+
+        <!-- Page Hero -->
+        <section class="page-hero section--dark">
+            <div class="container">
+                <p class="section__label fade-in">Careers</p>
+                <h1 class="fade-in fade-in--delay-1">Build healthcare infrastructure.<br />From day one.</h1>
+                <p class="fade-in fade-in--delay-2"
+                    style="max-width: 540px; margin-top: var(--space-md); font-size: 1.05rem;">
+                    QueueFree is an early-stage startup solving a real operational problem in Indian hospitals. We're
+                    looking for students who want to work on something that matters — not just add a line to their CV.
+                </p>
+            </div>
+        </section>
+
+        <!-- About the Opportunity -->
+        <section class="section--light">
+            <div class="container">
+                <div class="split">
+                    <div>
+                        <p class="section__label observe-fade">The Internship</p>
+                        <h2 class="observe-fade">Work at the infrastructure layer of healthcare.</h2>
+                    </div>
+                    <div class="observe-fade" style="padding-top: 0.3rem;">
+                        <p style="margin-bottom: var(--space-md);">
+                            As an intern at QueueFree, you work directly with the founding team on live product
+                            development, research, and operations. There are no layers between you and the actual
+                            problem inside Indian outpatient departments.
+                        </p>
+                        <p>
+                            This is a hands-on role at a pre-revenue, pre-pilot stage startup — not a structured
+                            corporate programme. We're actively preparing our first hospital pilot in Tamil Nadu, and
+                            your work will contribute to that deployment.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Open Roles -->
+        <section class="section--dark">
+            <div class="container">
+                <p class="section__label observe-fade">Open Roles</p>
+                <div class="grid-2" style="margin-top: var(--space-lg);">
+                    <div class="card observe-fade">
+                        <p class="card__label">Role 01</p>
+                        <h3 class="card__title">Healthcare Research Intern</h3>
+                        <p class="card__body">
+                            Map OPD workflows, wait-time data, and hospital operational patterns across Tamil Nadu to
+                            ground QueueFree in real clinical environments.
+                        </p>
+                    </div>
+                    <div class="card observe-fade">
+                        <p class="card__label">Role 02</p>
+                        <h3 class="card__title">Product Intern</h3>
+                        <p class="card__body">
+                            Work on product specs, user flows, and interface logic for both patient and hospital-side
+                            features — from token booking to queue dashboards.
+                        </p>
+                    </div>
+                    <div class="card observe-fade">
+                        <p class="card__label">Role 03</p>
+                        <h3 class="card__title">Operations Intern</h3>
+                        <p class="card__body">
+                            Support pilot preparation, hospital outreach, and process documentation for the first
+                            deployment, working closely with hospital stakeholders.
+                        </p>
+                    </div>
+                    <div class="card observe-fade">
+                        <p class="card__label">Role 04</p>
+                        <h3 class="card__title">Software Development Intern</h3>
+                        <p class="card__body">
+                            Contribute to MVP development across the patient app, hospital dashboard, and backend queue
+                            logic, with a focus on robustness over features.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Application Form -->
+        <section class="section--light">
+            <div class="container">
+                <div class="intern-layout">
+
+                    <div class="observe-fade">
+                        <p class="section__label">Apply</p>
+                        <h2 style="margin-top: var(--space-sm); max-width: 420px;">
+                            If you want in, tell us about yourself.
+                        </h2>
+                        <p style="margin-top: var(--space-md); max-width: 420px; color: var(--text-on-lite-b); font-size: 0.95rem;">
+                            We are looking for students who are comfortable with ambiguity, hands-on work, and learning
+                            quickly in operational environments. Take your time with the form — your answers matter more
+                            than formatting.
+                        </p>
+                    </div>
+
+                    <div class="observe-fade">
+                        <div class="card">
+                            <form id="internForm" style="padding: var(--space-sm) 0 0;">
+
+                                <!-- Group 1 — Basic Information -->
+                                <div class="intern-group">
+                                    <p class="intern-group__label">Basic Information</p>
+                                    <div class="form-group">
+                                        <label for="internName">Full Name</label>
+                                        <input type="text" id="internName" name="name" placeholder="Your full name"
+                                            required />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="internEmail">Email Address</label>
+                                        <input type="email" id="internEmail" name="email"
+                                            placeholder="you@college.edu" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="internPhone">Phone Number</label>
+                                        <input type="tel" id="internPhone" name="phone"
+                                            placeholder="+91-XXXXXXXXXX" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="internCity">City</label>
+                                        <input type="text" id="internCity" name="city"
+                                            placeholder="City you are currently based in" required />
+                                    </div>
+                                </div>
+
+                                <!-- Group 2 — Education -->
+                                <div class="intern-group">
+                                    <p class="intern-group__label">Education</p>
+                                    <div class="form-group">
+                                        <label for="internCollege">College / University</label>
+                                        <input type="text" id="internCollege" name="college"
+                                            placeholder="Name of your college or university" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="internDegree">Degree / Programme</label>
+                                        <input type="text" id="internDegree" name="degree"
+                                            placeholder="e.g., BTech CSE, MBBS, BBA" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="internYearOfStudy">Year of Study</label>
+                                        <select id="internYearOfStudy" name="yearOfStudy" required>
+                                            <option value="" disabled selected>Select your current year</option>
+                                            <option value="1st Year">1st Year</option>
+                                            <option value="2nd Year">2nd Year</option>
+                                            <option value="3rd Year">3rd Year</option>
+                                            <option value="4th Year">4th Year</option>
+                                            <option value="Postgraduate">Postgraduate</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- Group 3 — Internship Details -->
+                                <div class="intern-group">
+                                    <p class="intern-group__label">Internship Details</p>
+                                    <div class="form-group">
+                                        <label for="internRole">Role Applying For</label>
+                                        <select id="internRole" name="role" required>
+                                            <option value="" disabled selected>Select a role</option>
+                                            <option value="Healthcare Research Intern">Healthcare Research Intern</option>
+                                            <option value="Product Intern">Product Intern</option>
+                                            <option value="Operations Intern">Operations Intern</option>
+                                            <option value="Software Development Intern">Software Development Intern</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="internAvailability">Availability</label>
+                                        <select id="internAvailability" name="availability" required>
+                                            <option value="" disabled selected>Select availability</option>
+                                            <option value="Part-time">Part-time</option>
+                                            <option value="Full-time">Full-time</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="internDuration">Expected Duration</label>
+                                        <select id="internDuration" name="duration">
+                                            <option value="" disabled selected>Select duration</option>
+                                            <option value="1 Month">1 Month</option>
+                                            <option value="2 Months">2 Months</option>
+                                            <option value="3 Months">3 Months</option>
+                                            <option value="6 Months">6 Months</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- Group 4 — Professional Links -->
+                                <div class="intern-group">
+                                    <p class="intern-group__label">Professional Links</p>
+                                    <div class="form-group">
+                                        <label for="internLinkedIn">LinkedIn Profile</label>
+                                        <input type="url" id="internLinkedIn" name="linkedIn"
+                                            placeholder="https://linkedin.com/in/yourprofile" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="internGithub">GitHub or Portfolio (optional)</label>
+                                        <input type="url" id="internGithub" name="github"
+                                            placeholder="https://github.com/yourusername" />
+                                    </div>
+                                </div>
+
+                                <!-- Group 5 — Short Statement -->
+                                <div class="intern-group">
+                                    <p class="intern-group__label">Short Statement</p>
+                                    <div class="form-group">
+                                        <label for="internStatement">Why do you want to work in a healthcare
+                                            startup?</label>
+                                        <textarea id="internStatement" name="statement" required
+                                            placeholder="Tell us what draws you to this problem and what you'd bring to an early-stage team. 150–300 words."></textarea>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn--primary"
+                                    style="width: 100%; font-size: 0.95rem; padding: 0.9rem 1.5rem;">
+                                    Submit Application
+                                </button>
+                                <p id="internFormMessage"
+                                    style="margin-top: var(--space-md); font-size: 0.9rem; font-weight: 500; text-align: center; display: none;">
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <span class="footer__logo">
+                    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="38" cy="26" r="5" fill="white" opacity="0.5" />
+                        <circle cx="82" cy="26" r="5" fill="white" opacity="0.5" />
+                        <path
+                            d="M38 26 C38 18 82 18 82 26 C82 36 92 48 92 68 C92 90 76 106 60 108 C44 106 28 90 28 68 C28 48 38 36 38 26 Z"
+                            stroke="white" stroke-width="6" fill="none" opacity="0.4" stroke-linejoin="round"
+                            stroke-linecap="round" />
+                        <path d="M42 68 L55 82 L78 54" stroke="#2BBF8F" stroke-width="7" stroke-linecap="round"
+                            stroke-linejoin="round" opacity="0.6" />
+                    </svg>
+                    QueueFree
+                </span>
+                <span class="footer__copy">© 2026 QueueFree. Healthcare Infrastructure.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        (function () {
+            const form = document.getElementById("internForm");
+            if (!form) return;
+
+            const msgEl = document.getElementById("internFormMessage");
+
+            function showMsg(text, isError) {
+                msgEl.textContent = text;
+                msgEl.style.display = "block";
+                msgEl.style.color = isError ? "#c0392b" : "var(--green-dim, #2BBF8F)";
+            }
+
+            function clearInlineErrors() {
+                form.querySelectorAll(".field-error").forEach(function (el) { el.remove(); });
+            }
+
+            function addInlineError(field, text) {
+                var existing = field.parentElement.querySelector(".field-error");
+                if (existing) existing.remove();
+                var span = document.createElement("span");
+                span.className = "field-error";
+                span.textContent = text;
+                span.style.cssText = "color:#c0392b;font-size:0.78rem;margin-top:0.25rem;display:block;";
+                field.parentElement.appendChild(span);
+            }
+
+            form.addEventListener("submit", async function (e) {
+                e.preventDefault();
+                clearInlineErrors();
+                msgEl.style.display = "none";
+
+                var nameVal = form.elements["name"].value.trim();
+                var emailVal = form.elements["email"].value.trim();
+                var phoneVal = form.elements["phone"].value.trim();
+                var cityVal = form.elements["city"].value.trim();
+                var collegeVal = form.elements["college"].value.trim();
+                var degreeVal = form.elements["degree"].value.trim();
+                var yearOfStudyVal = form.elements["yearOfStudy"].value;
+                var roleVal = form.elements["role"].value;
+                var availabilityVal = form.elements["availability"].value;
+                var durationVal = form.elements["duration"].value;
+                var linkedInVal = form.elements["linkedIn"].value.trim();
+                var githubVal = form.elements["github"].value.trim();
+                var statementVal = form.elements["statement"].value.trim();
+
+                var valid = true;
+                if (!nameVal) { addInlineError(form.elements["name"], "Please enter your name."); valid = false; }
+                if (!emailVal) {
+                    addInlineError(form.elements["email"], "Please enter your email.");
+                    valid = false;
+                } else {
+                    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailPattern.test(emailVal)) {
+                        addInlineError(form.elements["email"], "Please enter a valid email address.");
+                        valid = false;
+                    }
+                }
+                if (!phoneVal) { addInlineError(form.elements["phone"], "Please enter your phone number."); valid = false; }
+                if (!cityVal) { addInlineError(form.elements["city"], "Please enter your city."); valid = false; }
+                if (!collegeVal) { addInlineError(form.elements["college"], "Please enter your college or university."); valid = false; }
+                if (!degreeVal) { addInlineError(form.elements["degree"], "Please enter your degree or programme."); valid = false; }
+                if (!yearOfStudyVal) { addInlineError(form.elements["yearOfStudy"], "Please select your year of study."); valid = false; }
+                if (!roleVal) { addInlineError(form.elements["role"], "Please select a role."); valid = false; }
+                if (!availabilityVal) { addInlineError(form.elements["availability"], "Please select availability."); valid = false; }
+                if (!statementVal) { addInlineError(form.elements["statement"], "Please add a short statement."); valid = false; }
+
+                if (!valid) return;
+
+                var btn = form.querySelector('button[type="submit"]');
+                var origText = btn.textContent;
+                btn.textContent = "Submitting…";
+                btn.disabled = true;
+                btn.style.opacity = "0.6";
+
+                try {
+                    var response = await fetch("/api/intern-application", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            name: nameVal,
+                            email: emailVal,
+                            phone: phoneVal,
+                            city: cityVal,
+                            college: collegeVal,
+                            degree: degreeVal,
+                            yearOfStudy: yearOfStudyVal,
+                            role: roleVal,
+                            availability: availabilityVal,
+                            duration: durationVal || null,
+                            linkedIn: linkedInVal || null,
+                            github: githubVal || null,
+                            statement: statementVal
+                        })
+                    });
+
+                    if (response.ok) {
+                        showMsg("Application submitted. We will reach out if there's a potential fit.", false);
+                        form.reset();
+                    } else {
+                        showMsg("Unable to submit application right now. Please try again later.", true);
+                    }
+                } catch (err) {
+                    showMsg("Unable to submit application right now. Please try again later.", true);
+                } finally {
+                    btn.textContent = origText;
+                    btn.disabled = false;
+                    btn.style.opacity = "1";
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>
