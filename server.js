@@ -26,10 +26,10 @@ transporter.verify((error) => {
   if (error) {
     console.error("[Nodemailer] SMTP verification failed:", error.message);
     console.error(
-      "[Nodemailer] Check SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS in your .env file"
+      "[Nodemailer] Ensure SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS are set in .env"
     );
   } else {
-    console.log("[Nodemailer] SMTP connection verified. Ready to send mail.");
+    console.log("[Nodemailer] SMTP connection verified. Ready to send.");
   }
 });
 
@@ -52,7 +52,7 @@ app.post("/api/intern-application", async (req, res) => {
     } = req.body;
 
     // Required field validation
-    const requiredFields = {
+    const required = {
       name,
       email,
       phone,
@@ -64,16 +64,21 @@ app.post("/api/intern-application", async (req, res) => {
       availability,
       statement,
     };
-    for (const [field, value] of Object.entries(requiredFields)) {
+    for (const [field, value] of Object.entries(required)) {
       if (!value || String(value).trim() === "") {
-        return res.status(400).json({ error: `Missing required field: ${field}` });
+        console.warn(`[intern-application] Missing required field: ${field}`);
+        return res
+          .status(400)
+          .json({ success: false, message: `Missing required field: ${field}` });
       }
     }
 
     // Email format validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      return res.status(400).json({ error: "Invalid email address." });
+      return res
+        .status(400)
+        .json({ success: false, message: "Invalid email address." });
     }
 
     // LinkedIn normalisation and validation (optional field)
@@ -84,7 +89,9 @@ app.post("/api/intern-application", async (req, res) => {
         linkedInNormalised = "https://" + linkedInNormalised;
       }
       if (!linkedInNormalised.includes("linkedin.com/in/")) {
-        return res.status(400).json({ error: "Invalid LinkedIn profile URL." });
+        return res
+          .status(400)
+          .json({ success: false, message: "Invalid LinkedIn profile URL." });
       }
     }
 
@@ -134,10 +141,8 @@ ${statement}
     );
     return res.status(200).json({ success: true });
   } catch (err) {
-    console.error("[intern-application] Handler error:", err);
-    return res
-      .status(500)
-      .json({ error: "Failed to send application. Please try again later." });
+    console.error("[intern-application] Handler error:", err.message);
+    return res.status(500).json({ success: false, message: "Email failed to send." });
   }
 });
 

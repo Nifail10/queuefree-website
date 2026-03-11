@@ -441,15 +441,18 @@
 
                     if (!response.ok) {
                         const errData = await response.json().catch(() => ({}));
-                        console.error('[intern-application] Server responded with error:', response.status, errData);
+                        console.error('[intern-application] Server error:', response.status, errData);
                         showMsg('Unable to submit right now. Try again later.', true);
                         return;
                     }
 
-                    showMsg("Application submitted. We will reach out if there's a potential fit.", false);
-                    form.reset();
+                    const data = await response.json().catch(() => ({}));
+                    if (data.success) {
+                        showMsg('Application submitted successfully. We will be in touch soon.', false);
+                        form.reset();
+                    }
                 } catch (err) {
-                    console.error('[intern-application] Network or fetch error:', err);
+                    console.error('[intern-application] Fetch/network error:', err);
                     showMsg('Unable to submit right now. Try again later.', true);
                 } finally {
                     btn.textContent = origText;
