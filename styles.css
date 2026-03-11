@@ -172,6 +172,10 @@ a {
   transition: background var(--transition);
 }
 
+.nav {
+  z-index: 1000;
+}
+
 .nav__logo {
   display: flex;
   align-items: center;
@@ -878,6 +882,7 @@ a {
 @media (max-width: 768px) {
   .nav {
     position: relative;
+    z-index: 1000;
     flex-wrap: wrap;
     padding: 0 var(--space-md);
   }
@@ -886,6 +891,8 @@ a {
     display: none;
     flex-direction: column;
     width: 100%;
+    background-color: var(--bg-primary, #0a1a24);
+    left: 0;
     padding: var(--space-sm) 0 var(--space-md);
     gap: 0;
     order: 3;
@@ -893,6 +900,10 @@ a {
 
   .nav__links.nav--open {
     display: flex;
+    background-color: var(--bg-primary, #0a1a24);
+    width: 100%;
+    position: relative;
+    z-index: 999;
   }
 
   .nav__links li {
