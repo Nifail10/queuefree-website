@@ -2,6 +2,7 @@
 require("dotenv").config(); // must be line 1
 
 const express = require("express");
+const path = require("path");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
 
@@ -11,6 +12,7 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname)));
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,

@@ -877,7 +877,7 @@ a {
 
 @media (max-width: 768px) {
   .nav {
-    position: relative;
+    position: fixed;
     z-index: 1000;
     flex-wrap: wrap;
     align-items: center;
@@ -887,42 +887,59 @@ a {
   .nav__links {
     display: none;
     flex-direction: column;
-    width: 100%;
-    background-color: var(--bg-primary, #0a1a24);
+    position: absolute;
+    top: 66px;
     left: 0;
-    padding: var(--space-sm) 0 var(--space-md);
+    right: 0;
+    width: 100%;
+    height: calc(100vh - 66px);
+    background-color: #ffffff;
+    padding: var(--space-sm) var(--space-md) var(--space-md);
     gap: 0;
-    order: 3;
-    position: relative;
-    z-index: 999;
+    z-index: 9999;
+    overflow-y: auto;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
   }
 
   .nav__links.nav--open {
-    display: flex;
-    background-color: var(--bg-primary, #0a1a24);
-    width: 100%;
-    position: relative;
-    z-index: 999;
+    display: flex !important;
   }
 
   .nav__links li {
     width: 100%;
-  }
-
-  /* Override legacy "hide middle links" rule on small screens */
-  .nav__links li:not(:last-child):not(:first-child) {
-    display: block;
+    display: block !important;
   }
 
   .nav__links li a {
     display: block;
     padding: 0.75rem 0;
     width: 100%;
-    border-bottom: 1px solid var(--border-dark);
+    color: var(--text-on-lite-h);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .nav__links li a:hover,
+  .nav__links li a.active {
+    color: var(--green-deep);
   }
 
   .nav__links li:last-child a {
     border-bottom: none;
+  }
+
+  .nav__links li a.nav-cta {
+    color: #ffffff;
+    background: var(--green);
+    border: 1px solid var(--green);
+    text-align: center;
+    margin-top: 0.5rem;
+    border-radius: var(--radius-sm);
+    padding: 0.65rem 1.1rem;
+  }
+
+  .nav__links li a.nav-cta:hover {
+    background: var(--green-dim);
+    border-color: var(--green-dim);
   }
 
   .nav__toggle {
