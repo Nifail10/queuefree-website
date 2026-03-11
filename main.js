@@ -55,3 +55,24 @@
 
   });
 })();
+
+(function () {
+  const toggle = document.getElementById('navToggle');
+  const navLinks = document.querySelector('.nav__links');
+  if (!toggle || !navLinks) return;
+
+  toggle.addEventListener('click', function () {
+    const isOpen = navLinks.classList.toggle('nav--open');
+    toggle.classList.toggle('nav--open', isOpen);
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  // Close menu when a nav link is clicked (single-page navigation)
+  navLinks.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      navLinks.classList.remove('nav--open');
+      toggle.classList.remove('nav--open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
