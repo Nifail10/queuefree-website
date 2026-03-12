@@ -11,6 +11,7 @@ export default async function handler(req, res) {
     const safeName = name || "No name provided";
     const safeEmail = email || "No email provided";
     const safeOrg = org || "Not specified";
+    const safeSubject = subject || "General Enquiry";
     const safeMessage = message || "No message provided";
 
     const transporter = nodemailer.createTransport({
@@ -30,6 +31,14 @@ export default async function handler(req, res) {
         "X-Mailer": "QueueFree Website",
         "X-Priority": "3",
       },
+      text: `New QueueFree Contact Enquiry
+Name:                  ${safeName}
+Email:                 ${safeEmail}
+Organisation/Hospital: ${safeOrg}
+Subject:               ${safeSubject}
+
+Message:
+${safeMessage}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
           <h2 style="color: #1a5c50; border-bottom: 2px solid #2BBF8F; padding-bottom: 10px;">New QueueFree Website Inquiry</h2>
@@ -43,10 +52,14 @@ export default async function handler(req, res) {
               <td style="padding: 10px 12px; color: #555;"><a href="mailto:${safeEmail}">${safeEmail}</a></td>
             </tr>
             <tr>
-              <td style="padding: 10px 12px; font-weight: bold; color: #333; vertical-align: top;">Organization:</td>
+              <td style="padding: 10px 12px; font-weight: bold; color: #333; vertical-align: top;">Organisation/Hospital:</td>
               <td style="padding: 10px 12px; color: #555;">${safeOrg}</td>
             </tr>
             <tr style="background: #f9f9f9;">
+              <td style="padding: 10px 12px; font-weight: bold; color: #333; vertical-align: top;">Subject:</td>
+              <td style="padding: 10px 12px; color: #555;">${safeSubject}</td>
+            </tr>
+            <tr>
               <td style="padding: 10px 12px; font-weight: bold; color: #333; vertical-align: top;">Message:</td>
               <td style="padding: 10px 12px; color: #555; white-space: pre-wrap;">${safeMessage}</td>
             </tr>
