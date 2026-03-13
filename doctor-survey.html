@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doctor Survey — QueueFree</title>
+    <meta name="description"
+        content="Doctor survey for QueueFree. Help us understand outpatient workflow and improve hospital queue systems." />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <nav class="nav">
+        <a href="index.html" class="nav__logo">
+            <svg class="nav__logo-icon" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="38" cy="26" r="5" fill="white" opacity="0.85" />
+                <circle cx="82" cy="26" r="5" fill="white" opacity="0.85" />
+                <path
+                    d="M38 26 C38 18 82 18 82 26 C82 36 92 48 92 68 C92 90 76 106 60 108 C44 106 28 90 28 68 C28 48 38 36 38 26 Z"
+                    stroke="white" stroke-width="5.5" fill="none" stroke-linejoin="round" stroke-linecap="round" />
+                <path d="M42 68 L55 82 L78 54" stroke="#2BBF8F" stroke-width="7" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+            QueueFree
+        </a>
+        <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="problem.html">Problem</a></li>
+            <li><a href="solution.html">Solution</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="pilot.html">Pilot</a></li>
+            <li><a href="doctor-survey.html">Doctor Survey</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html" class="nav-cta">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="page-offset">
+
+        <!-- Page Hero -->
+        <section class="page-hero section--dark">
+            <div class="container">
+                <p class="section__label fade-in">Doctor Survey</p>
+                <h1 class="fade-in fade-in--delay-1">Help us understand<br />how OPDs really work.</h1>
+                <p class="fade-in fade-in--delay-2"
+                    style="max-width: 540px; margin-top: var(--space-md); font-size: 1.05rem;">
+                    This short survey helps us understand outpatient workflow and improve hospital queue systems. It
+                    takes under three minutes.
+                </p>
+            </div>
+        </section>
+
+        <!-- Survey Form -->
+        <section class="section--light">
+            <div class="container">
+                <div class="split">
+                    <div>
+                        <p class="section__label observe-fade">For Doctors & Clinicians</p>
+                        <h2 class="observe-fade">Your experience shapes what we build.</h2>
+                        <p class="observe-fade" style="margin-top: var(--space-md);">
+                            QueueFree is being designed around the real constraints of outpatient departments.
+                            We want to hear from doctors directly — not assumptions, not proxies.
+                        </p>
+                        <p class="observe-fade" style="margin-top: var(--space-sm);">
+                            All responses are confidential and used only to inform product development.
+                        </p>
+                    </div>
+
+                    <div class="observe-fade">
+                        <div class="card">
+                            <form id="doctorSurveyForm" style="padding: var(--space-sm) 0 0;">
+
+                                <span
+                                    style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-on-lite-m); margin: var(--space-md) 0 var(--space-sm); display: block;">Practice
+                                    Details</span>
+                                <div class="form-group">
+                                    <label for="specialty">Specialty</label>
+                                    <input type="text" id="specialty" placeholder="e.g. General Medicine, Cardiology, Paediatrics"
+                                        required />
+                                </div>
+                                <div class="form-group">
+                                    <label for="patientsPerDay">Average number of patients seen per day</label>
+                                    <select id="patientsPerDay" required>
+                                        <option value="" disabled selected>Select an option</option>
+                                        <option value="Less than 20">Less than 20</option>
+                                        <option value="20 – 40">20 – 40</option>
+                                        <option value="40 – 60">40 – 60</option>
+                                        <option value="60 – 80">60 – 80</option>
+                                        <option value="More than 80">More than 80</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="consultationTime">Average consultation time per patient</label>
+                                    <select id="consultationTime" required>
+                                        <option value="" disabled selected>Select an option</option>
+                                        <option value="Less than 5 minutes">Less than 5 minutes</option>
+                                        <option value="5 – 10 minutes">5 – 10 minutes</option>
+                                        <option value="10 – 15 minutes">10 – 15 minutes</option>
+                                        <option value="More than 15 minutes">More than 15 minutes</option>
+                                    </select>
+                                </div>
+
+                                <span
+                                    style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-on-lite-m); margin: var(--space-md) 0 var(--space-sm); display: block;">Current
+                                    Queue Setup</span>
+                                <div class="form-group">
+                                    <label for="queueMethod">Current queue management method</label>
+                                    <select id="queueMethod" required>
+                                        <option value="" disabled selected>Select an option</option>
+                                        <option value="Manual / Paper tokens">Manual / Paper tokens</option>
+                                        <option value="Reception calling out names">Reception calling out names</option>
+                                        <option value="Basic software / HIS">Basic software / HIS</option>
+                                        <option value="No formal system">No formal system</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="patientsAsk">Do patients frequently ask reception or staff about their turn?</label>
+                                    <select id="patientsAsk" required>
+                                        <option value="" disabled selected>Select an option</option>
+                                        <option value="Yes, very frequently">Yes, very frequently</option>
+                                        <option value="Occasionally">Occasionally</option>
+                                        <option value="Rarely">Rarely</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="crowdingAffects">Does crowding in the waiting area affect your workflow or consultation quality?</label>
+                                    <select id="crowdingAffects" required>
+                                        <option value="" disabled selected>Select an option</option>
+                                        <option value="Yes, significantly">Yes, significantly</option>
+                                        <option value="Sometimes">Sometimes</option>
+                                        <option value="Rarely">Rarely</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>
+
+                                <span
+                                    style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-on-lite-m); margin: var(--space-md) 0 var(--space-sm); display: block;">QueueFree
+                                    Relevance</span>
+                                <div class="form-group">
+                                    <label for="transparencyHelps">Would real-time queue transparency — patients seeing their live position and estimated wait — help reduce waiting room pressure?</label>
+                                    <select id="transparencyHelps" required>
+                                        <option value="" disabled selected>Select an option</option>
+                                        <option value="Yes, it would make a significant difference">Yes, it would make a significant difference</option>
+                                        <option value="Probably yes">Probably yes</option>
+                                        <option value="Unsure">Unsure</option>
+                                        <option value="Probably not">Probably not</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="openToTesting">Would you be open to testing a queue management system in your OPD?</label>
+                                    <select id="openToTesting" required>
+                                        <option value="" disabled selected>Select an option</option>
+                                        <option value="Yes, actively interested">Yes, actively interested</option>
+                                        <option value="Open to it">Open to it</option>
+                                        <option value="Need more information">Need more information</option>
+                                        <option value="Not at this stage">Not at this stage</option>
+                                    </select>
+                                </div>
+
+                                <span
+                                    style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-on-lite-m); margin: var(--space-md) 0 var(--space-sm); display: block;">Optional
+                                    Contact</span>
+                                <div class="form-group">
+                                    <label for="hospital">Hospital or Clinic Name</label>
+                                    <input type="text" id="hospital" placeholder="Name of your hospital or clinic" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="contactEmail">Contact Email</label>
+                                    <input type="email" id="contactEmail"
+                                        placeholder="your@email.com — only if you'd like us to follow up" />
+                                </div>
+
+                                <button type="submit" class="btn btn--primary"
+                                    style="width: 100%; font-size: 0.95rem; padding: 0.9rem 1.5rem; margin-top: var(--space-md);">
+                                    Submit Survey
+                                </button>
+                                <p id="surveyMessage"
+                                    style="margin-top: var(--space-md); font-size: 0.9rem; font-weight: 500; text-align: center; display: none;">
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <span class="footer__logo">
+                    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="38" cy="26" r="5" fill="white" opacity="0.5" />
+                        <circle cx="82" cy="26" r="5" fill="white" opacity="0.5" />
+                        <path
+                            d="M38 26 C38 18 82 18 82 26 C82 36 92 48 92 68 C92 90 76 106 60 108 C44 106 28 90 28 68 C28 48 38 36 38 26 Z"
+                            stroke="white" stroke-width="6" fill="none" opacity="0.4" stroke-linejoin="round"
+                            stroke-linecap="round" />
+                        <path d="M42 68 L55 82 L78 54" stroke="#2BBF8F" stroke-width="7" stroke-linecap="round"
+                            stroke-linejoin="round" opacity="0.6" />
+                    </svg>
+                    QueueFree
+                </span>
+                <span class="footer__copy">© 2026 QueueFree. Healthcare Infrastructure.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        (function () {
+            const form = document.getElementById("doctorSurveyForm");
+            if (!form) return;
+
+            const msgEl = document.getElementById("surveyMessage");
+
+            function showMsg(text, isError) {
+                msgEl.textContent = text;
+                msgEl.style.display = "block";
+                msgEl.style.color = isError ? "#c0392b" : "var(--green-dim, #2BBF8F)";
+            }
+
+            function addInlineError(field, text) {
+                var existing = field.parentElement.querySelector(".field-error");
+                if (existing) existing.remove();
+                var span = document.createElement("span");
+                span.className = "field-error";
+                span.textContent = text;
+                span.style.cssText = "color:#c0392b;font-size:0.78rem;margin-top:0.25rem;display:block;";
+                field.parentElement.appendChild(span);
+            }
+
+            function clearInlineErrors() {
+                form.querySelectorAll(".field-error").forEach(function (el) { el.remove(); });
+            }
+
+            form.addEventListener("submit", async function (e) {
+                e.preventDefault();
+                clearInlineErrors();
+                msgEl.style.display = "none";
+
+                var specialty = document.getElementById("specialty").value.trim();
+                var patientsPerDay = document.getElementById("patientsPerDay").value.trim();
+                var consultationTime = document.getElementById("consultationTime").value.trim();
+                var queueMethod = document.getElementById("queueMethod").value.trim();
+                var patientsAsk = document.getElementById("patientsAsk").value.trim();
+                var crowdingAffects = document.getElementById("crowdingAffects").value.trim();
+                var transparencyHelps = document.getElementById("transparencyHelps").value.trim();
+                var openToTesting = document.getElementById("openToTesting").value.trim();
+                var hospital = document.getElementById("hospital").value.trim();
+                var contactEmail = document.getElementById("contactEmail").value.trim();
+
+                var valid = true;
+                if (!specialty) { addInlineError(document.getElementById("specialty"), "Please enter your specialty."); valid = false; }
+                if (!patientsPerDay) { addInlineError(document.getElementById("patientsPerDay"), "Please select an option."); valid = false; }
+                if (!consultationTime) { addInlineError(document.getElementById("consultationTime"), "Please select an option."); valid = false; }
+                if (!queueMethod) { addInlineError(document.getElementById("queueMethod"), "Please select an option."); valid = false; }
+                if (!patientsAsk) { addInlineError(document.getElementById("patientsAsk"), "Please select an option."); valid = false; }
+                if (!crowdingAffects) { addInlineError(document.getElementById("crowdingAffects"), "Please select an option."); valid = false; }
+                if (!transparencyHelps) { addInlineError(document.getElementById("transparencyHelps"), "Please select an option."); valid = false; }
+                if (!openToTesting) { addInlineError(document.getElementById("openToTesting"), "Please select an option."); valid = false; }
+                if (!valid) return;
+
+                var btn = form.querySelector('button[type="submit"]');
+                btn.textContent = "Submitting…";
+                btn.disabled = true;
+                btn.style.opacity = "0.6";
+
+                try {
+                    const response = await fetch('/api/doctor-survey', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            specialty,
+                            patientsPerDay,
+                            consultationTime,
+                            queueMethod,
+                            patientsAsk,
+                            crowdingAffects,
+                            transparencyHelps,
+                            openToTesting,
+                            hospital,
+                            contactEmail,
+                        }),
+                    });
+
+                    if (!response.ok) {
+                        const errData = await response.json().catch(() => ({}));
+                        console.error('[doctor-survey] Server error:', response.status, errData);
+                        showMsg('Unable to submit right now. Please try again later.', true);
+                        return;
+                    }
+
+                    const data = await response.json();
+                    if (data.success) {
+                        showMsg('Thank you. Your response has been received.', false);
+                        form.reset();
+                    }
+                } catch (err) {
+                    console.error('[doctor-survey] Fetch error:', err);
+                    showMsg('Unable to submit right now. Please try again later.', true);
+                } finally {
+                    btn.textContent = "Submit Survey";
+                    btn.disabled = false;
+                    btn.style.opacity = "1";
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>
