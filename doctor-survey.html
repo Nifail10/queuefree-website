@@ -47,149 +47,187 @@
         <!-- Page Hero -->
         <section class="page-hero section--dark">
             <div class="container">
-                <p class="section__label fade-in">Doctor Survey</p>
-                <h1 class="fade-in fade-in--delay-1">Help us understand<br />how OPDs really work.</h1>
-                <p class="fade-in fade-in--delay-2"
-                    style="max-width: 540px; margin-top: var(--space-md); font-size: 1.05rem;">
-                    This short survey helps us understand outpatient workflow and improve hospital queue systems. It
-                    takes under three minutes.
+                <p class="section__label fade-in">Doctor Feedback Survey</p>
+                <h1 class="fade-in fade-in--delay-1">Help us understand<br />how your OPD runs.</h1>
+                <p class="fade-in fade-in--delay-2" style="max-width: 540px; margin-top: var(--space-md); font-size: 1.05rem;">
+                    This short survey helps us understand outpatient workflows and improve hospital queue systems.
+                </p>
+                <p class="fade-in fade-in--delay-3" style="margin-top: var(--space-sm); font-size: 0.85rem; opacity: 0.6;">
+                    Takes less than 1 minute to complete.
                 </p>
             </div>
         </section>
-
         <!-- Survey Form -->
-        <section class="section--light">
+        <section class="section--dark">
             <div class="container">
-                <div class="split">
-                    <div>
-                        <p class="section__label observe-fade">For Doctors & Clinicians</p>
-                        <h2 class="observe-fade">Your experience shapes what we build.</h2>
-                        <p class="observe-fade" style="margin-top: var(--space-md);">
-                            QueueFree is being designed around the real constraints of outpatient departments.
-                            We want to hear from doctors directly — not assumptions, not proxies.
+                <div class="survey-form">
+
+                    <!-- Intro -->
+                    <div class="survey-intro observe-fade">
+                        <p class="section__label">QueueFree · Doctor Survey</p>
+                        <h2>Help Us Understand<br /><span class="highlight">Your Practice</span></h2>
+                        <p style="margin-top: var(--space-sm); max-width: 540px; margin-left: auto; margin-right: auto;">
+                            This short survey helps us learn how doctors currently manage patient queues
+                            and whether a real-time transparency solution would benefit your OPD.
                         </p>
-                        <p class="observe-fade" style="margin-top: var(--space-sm);">
-                            All responses are confidential and used only to inform product development.
-                        </p>
-                    </div>
-
-                    <div class="observe-fade">
-                        <div class="card">
-                            <form id="doctorSurveyForm" style="padding: var(--space-sm) 0 0;">
-
-                                <span
-                                    style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-on-lite-m); margin: var(--space-md) 0 var(--space-sm); display: block;">Practice
-                                    Details</span>
-                                <div class="form-group">
-                                    <label for="specialty">Specialty</label>
-                                    <input type="text" id="specialty" placeholder="e.g. General Medicine, Cardiology, Paediatrics"
-                                        required />
-                                </div>
-                                <div class="form-group">
-                                    <label for="patientsPerDay">Average number of patients seen per day</label>
-                                    <select id="patientsPerDay" required>
-                                        <option value="" disabled selected>Select an option</option>
-                                        <option value="Less than 20">Less than 20</option>
-                                        <option value="20 – 40">20 – 40</option>
-                                        <option value="40 – 60">40 – 60</option>
-                                        <option value="60 – 80">60 – 80</option>
-                                        <option value="More than 80">More than 80</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="consultationTime">Average consultation time per patient</label>
-                                    <select id="consultationTime" required>
-                                        <option value="" disabled selected>Select an option</option>
-                                        <option value="Less than 5 minutes">Less than 5 minutes</option>
-                                        <option value="5 – 10 minutes">5 – 10 minutes</option>
-                                        <option value="10 – 15 minutes">10 – 15 minutes</option>
-                                        <option value="More than 15 minutes">More than 15 minutes</option>
-                                    </select>
-                                </div>
-
-                                <span
-                                    style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-on-lite-m); margin: var(--space-md) 0 var(--space-sm); display: block;">Current
-                                    Queue Setup</span>
-                                <div class="form-group">
-                                    <label for="queueMethod">Current queue management method</label>
-                                    <select id="queueMethod" required>
-                                        <option value="" disabled selected>Select an option</option>
-                                        <option value="Manual / Paper tokens">Manual / Paper tokens</option>
-                                        <option value="Reception calling out names">Reception calling out names</option>
-                                        <option value="Basic software / HIS">Basic software / HIS</option>
-                                        <option value="No formal system">No formal system</option>
-                                        <option value="Other">Other</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="patientsAsk">Do patients frequently ask reception or staff about their turn?</label>
-                                    <select id="patientsAsk" required>
-                                        <option value="" disabled selected>Select an option</option>
-                                        <option value="Yes, very frequently">Yes, very frequently</option>
-                                        <option value="Occasionally">Occasionally</option>
-                                        <option value="Rarely">Rarely</option>
-                                        <option value="No">No</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="crowdingAffects">Does crowding in the waiting area affect your workflow or consultation quality?</label>
-                                    <select id="crowdingAffects" required>
-                                        <option value="" disabled selected>Select an option</option>
-                                        <option value="Yes, significantly">Yes, significantly</option>
-                                        <option value="Sometimes">Sometimes</option>
-                                        <option value="Rarely">Rarely</option>
-                                        <option value="No">No</option>
-                                    </select>
-                                </div>
-
-                                <span
-                                    style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-on-lite-m); margin: var(--space-md) 0 var(--space-sm); display: block;">QueueFree
-                                    Relevance</span>
-                                <div class="form-group">
-                                    <label for="transparencyHelps">Would real-time queue transparency — patients seeing their live position and estimated wait — help reduce waiting room pressure?</label>
-                                    <select id="transparencyHelps" required>
-                                        <option value="" disabled selected>Select an option</option>
-                                        <option value="Yes, it would make a significant difference">Yes, it would make a significant difference</option>
-                                        <option value="Probably yes">Probably yes</option>
-                                        <option value="Unsure">Unsure</option>
-                                        <option value="Probably not">Probably not</option>
-                                        <option value="No">No</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="openToTesting">Would you be open to testing a queue management system in your OPD?</label>
-                                    <select id="openToTesting" required>
-                                        <option value="" disabled selected>Select an option</option>
-                                        <option value="Yes, actively interested">Yes, actively interested</option>
-                                        <option value="Open to it">Open to it</option>
-                                        <option value="Need more information">Need more information</option>
-                                        <option value="Not at this stage">Not at this stage</option>
-                                    </select>
-                                </div>
-
-                                <span
-                                    style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-on-lite-m); margin: var(--space-md) 0 var(--space-sm); display: block;">Optional
-                                    Contact</span>
-                                <div class="form-group">
-                                    <label for="hospital">Hospital or Clinic Name</label>
-                                    <input type="text" id="hospital" placeholder="Name of your hospital or clinic" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="contactEmail">Contact Email</label>
-                                    <input type="email" id="contactEmail"
-                                        placeholder="your@email.com — only if you'd like us to follow up" />
-                                </div>
-
-                                <button type="submit" class="btn btn--primary"
-                                    style="width: 100%; font-size: 0.95rem; padding: 0.9rem 1.5rem; margin-top: var(--space-md);">
-                                    Submit Survey
-                                </button>
-                                <p id="surveyMessage"
-                                    style="margin-top: var(--space-md); font-size: 0.9rem; font-weight: 500; text-align: center; display: none;">
-                                </p>
-                            </form>
+                        <div class="survey-step-pills">
+                            <span class="survey-pill"><span class="survey-pill__num">1</span> Practice Details</span>
+                            <span class="survey-pill"><span class="survey-pill__num">2</span> Queue Setup</span>
+                            <span class="survey-pill"><span class="survey-pill__num">3</span> Relevance</span>
+                            <span class="survey-pill"><span class="survey-pill__num">4</span> Contact</span>
                         </div>
                     </div>
+
+                    <form id="doctorSurveyForm">
+
+                        <!-- Section 1: Practice Details -->
+                        <div class="survey-card observe-fade">
+                            <div class="survey-card__header">
+                                <span class="survey-card__badge">1</span>
+                                <span class="survey-card__label">Practice Details</span>
+                            </div>
+                            <h3 class="survey-card__heading">Tell us about your practice</h3>
+                            <p class="survey-card__desc">Basic information about your specialty and daily patient volume.</p>
+
+                            <div class="form-group">
+                                <label for="specialty">Your medical specialty</label>
+                                <input type="text" id="specialty" placeholder="e.g. General Medicine, Cardiology, Paediatrics" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="patientsPerDay">Average patients seen per day</label>
+                                <select id="patientsPerDay" required>
+                                    <option value="" disabled selected>Select a range</option>
+                                    <option value="Less than 20">Less than 20</option>
+                                    <option value="20 – 40">20 – 40</option>
+                                    <option value="40 – 60">40 – 60</option>
+                                    <option value="60 – 80">60 – 80</option>
+                                    <option value="More than 80">More than 80</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="consultationTime">Average consultation time per patient</label>
+                                <select id="consultationTime" required>
+                                    <option value="" disabled selected>Select a range</option>
+                                    <option value="Less than 5 minutes">Less than 5 minutes</option>
+                                    <option value="5 – 10 minutes">5 – 10 minutes</option>
+                                    <option value="10 – 15 minutes">10 – 15 minutes</option>
+                                    <option value="More than 15 minutes">More than 15 minutes</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Section 2: Current Queue Setup -->
+                        <div class="survey-card observe-fade">
+                            <div class="survey-card__header">
+                                <span class="survey-card__badge">2</span>
+                                <span class="survey-card__label">Current Queue Setup</span>
+                            </div>
+                            <h3 class="survey-card__heading">How do you manage patient queues?</h3>
+                            <p class="survey-card__desc">Help us understand your current workflow and pain points.</p>
+
+                            <div class="form-group">
+                                <label for="queueMethod">Current queue management method</label>
+                                <select id="queueMethod" required>
+                                    <option value="" disabled selected>Select a method</option>
+                                    <option value="Manual / Paper tokens">Manual / Paper tokens</option>
+                                    <option value="Reception calling out names">Reception calling out names</option>
+                                    <option value="Basic software / HIS">Basic software / HIS</option>
+                                    <option value="No formal system">No formal system</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="patientsAsk">Do patients frequently ask reception or staff about their turn?</label>
+                                <select id="patientsAsk" required>
+                                    <option value="" disabled selected>Select frequency</option>
+                                    <option value="Yes, very frequently">Yes, very frequently</option>
+                                    <option value="Occasionally">Occasionally</option>
+                                    <option value="Rarely">Rarely</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="crowdingAffects">Does crowding in the waiting area affect your workflow or consultation quality?</label>
+                                <select id="crowdingAffects" required>
+                                    <option value="" disabled selected>Select impact level</option>
+                                    <option value="Yes, significantly">Yes, significantly</option>
+                                    <option value="Sometimes">Sometimes</option>
+                                    <option value="Rarely">Rarely</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Section 3: QueueFree Relevance -->
+                        <div class="survey-card observe-fade">
+                            <div class="survey-card__header">
+                                <span class="survey-card__badge">3</span>
+                                <span class="survey-card__label">QueueFree Relevance</span>
+                            </div>
+                            <h3 class="survey-card__heading">Interest in queue transparency</h3>
+                            <p class="survey-card__desc">QueueFree lets patients see their live position and estimated wait time on their phone.</p>
+
+                            <div class="form-group">
+                                <label for="transparencyHelps">Would real-time queue transparency — patients seeing their live position and estimated wait — help reduce waiting room pressure?</label>
+                                <select id="transparencyHelps" required>
+                                    <option value="" disabled selected>Select your view</option>
+                                    <option value="Yes, it would make a significant difference">Yes, it would make a significant difference</option>
+                                    <option value="Probably yes">Probably yes</option>
+                                    <option value="Unsure">Unsure</option>
+                                    <option value="Probably not">Probably not</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="openToTesting">Would you be open to testing a queue management system in your OPD?</label>
+                                <select id="openToTesting" required>
+                                    <option value="" disabled selected>Select your interest</option>
+                                    <option value="Yes, actively interested">Yes, actively interested</option>
+                                    <option value="Open to it">Open to it</option>
+                                    <option value="Need more information">Need more information</option>
+                                    <option value="Not at this stage">Not at this stage</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Section 4: Optional Contact -->
+                        <div class="survey-card observe-fade">
+                            <div class="survey-card__header">
+                                <span class="survey-card__badge">4</span>
+                                <span class="survey-card__label">Optional Contact</span>
+                            </div>
+                            <h3 class="survey-card__heading">Leave your details</h3>
+                            <p class="survey-card__desc">Completely optional — only if you'd like us to follow up with you.</p>
+
+                            <div class="form-group">
+                                <label for="hospital">Hospital or clinic name <span class="label-optional">(optional)</span></label>
+                                <input type="text" id="hospital" placeholder="Name of your hospital or clinic" />
+                            </div>
+                            <div class="form-group">
+                                <label for="contactEmail">Contact email <span class="label-optional">(optional)</span></label>
+                                <input type="email" id="contactEmail" placeholder="your@email.com" />
+                            </div>
+                            <p style="font-size: 0.78rem; color: var(--text-on-dark-m); margin-top: calc(-1 * var(--space-sm));">
+                                We'll only use this to reach out regarding QueueFree. No marketing, ever.
+                            </p>
+                        </div>
+
+                        <!-- Submit -->
+                        <div class="survey-submit-area">
+                            <button type="submit" class="btn btn--primary">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink: 0;">
+                                    <path d="M3 8.5L6.5 12L13 4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Submit Survey
+                            </button>
+                            <p class="survey-footer-note">Your responses are anonymous unless you provide your contact details above.</p>
+                        </div>
+
+                        <p id="surveyMessage"
+                            style="margin-top: var(--space-md); font-size: 0.9rem; font-weight: 500; text-align: center; display: none;">
+                        </p>
+                    </form>
+
                 </div>
             </div>
         </section>
