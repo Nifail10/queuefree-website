@@ -989,3 +989,58 @@ a {
     padding: 0;
   }
 }
+
+/* Doctor Survey Layout */
+.survey-form-wrapper {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.survey-card {
+  margin-bottom: var(--space-md);
+}
+
+.survey-card .form-group:last-of-type {
+  margin-bottom: 0;
+}
+
+.survey-card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.survey-step-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--green);
+  color: var(--bg-primary);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.survey-section-title {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-on-lite-m);
+}
+
+@media (max-width: 768px) {
+  .survey-form-wrapper {
+    max-width: 100%;
+  }
+
+  .survey-card {
+    padding: var(--space-md);
+  }
+}
