@@ -1044,3 +1044,101 @@ a {
     padding: var(--space-md);
   }
 }
+
+/* Careers Form Layout */
+.form-cols-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+@media (max-width: 600px) {
+  .form-cols-2 {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Survey Card Extended Elements */
+.survey-card__heading {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+  line-height: 1.3;
+}
+
+.survey-card__desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+}
+
+.survey-submit-area {
+  text-align: center;
+  margin-top: var(--space-md);
+}
+
+.survey-submit-area .btn {
+  width: 100%;
+  font-size: 0.95rem;
+  padding: 0.9rem 1.5rem;
+}
+
+.survey-footer-note {
+  font-size: 0.8rem;
+  margin-top: var(--space-sm);
+  color: var(--text-on-lite-m);
+}
+
+.label-optional {
+  font-weight: 400;
+  opacity: 0.7;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* Careers Form Color Override */
+#intern-form-area label,
+#intern-form-area input,
+#intern-form-area select,
+#intern-form-area textarea,
+#intern-form-area p,
+#intern-form-area h3,
+#intern-form-area span:not(.btn):not(.survey-step-badge) {
+  color: #000000;
+}
+
+#intern-form-area .btn--primary {
+  color: #ffffff;
+}
+
+#intern-form-area #internFormMessage {
+  color: inherit !important;
+}
+
+#intern-form-area .survey-step-badge {
+  color: var(--green);
+}
+
+/* Survey Form Color Override */
+#survey-form-area,
+#survey-form-area label,
+#survey-form-area input,
+#survey-form-area select,
+#survey-form-area textarea,
+#survey-form-area h2,
+#survey-form-area h3,
+#survey-form-area p,
+#survey-form-area span {
+  color: #000000;
+}
+
+#survey-form-area .btn--primary {
+  color: inherit;
+}
+
+#survey-form-area #surveyMessage {
+  color: inherit !important;
+}
+
+

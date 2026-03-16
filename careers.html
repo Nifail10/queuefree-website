@@ -21,26 +21,6 @@
                 grid-template-columns: 1fr;
             }
         }
-
-        .intern-group {
-            border-bottom: 1px solid var(--border-light);
-            padding-bottom: var(--space-md);
-            margin-bottom: var(--space-md);
-        }
-
-        .intern-group:last-of-type {
-            border-bottom: none;
-            margin-bottom: 0;
-        }
-
-        .intern-group__label {
-            font-size: 0.7rem;
-            font-weight: 600;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--text-on-lite-m);
-            margin-bottom: 0.5rem;
-        }
     </style>
 </head>
 
@@ -120,41 +100,35 @@
             <div class="container">
                 <p class="section__label observe-fade">Open Roles</p>
                 <div class="grid-2" style="margin-top: var(--space-lg);">
+
                     <div class="card observe-fade">
                         <p class="card__label">Role 01</p>
                         <h3 class="card__title">Healthcare Research Intern</h3>
-                        <p class="card__body">
-                            Map OPD workflows, wait-time data, and hospital operational patterns across Tamil Nadu to
-                            ground QueueFree in real clinical environments.
-                        </p>
+                        <p class="card__body">Mapping OPD workflows, wait-time data, and hospital operational patterns across Tamil Nadu.</p>
                     </div>
+
                     <div class="card observe-fade">
                         <p class="card__label">Role 02</p>
                         <h3 class="card__title">Product Intern</h3>
-                        <p class="card__body">
-                            Work on product specs, user flows, and interface logic for both patient and hospital-side
-                            features — from token booking to queue dashboards.
-                        </p>
+                        <p class="card__body">Working on product specs, user flows, and interface logic for patient and hospital-side features.</p>
                     </div>
+
                     <div class="card observe-fade">
                         <p class="card__label">Role 03</p>
                         <h3 class="card__title">Operations Intern</h3>
-                        <p class="card__body">
-                            Support pilot preparation, hospital outreach, and process documentation for the first
-                            deployment, working closely with hospital stakeholders.
-                        </p>
+                        <p class="card__body">Supporting pilot preparation, hospital outreach, and process documentation for the first deployment.</p>
                     </div>
+
                     <div class="card observe-fade">
                         <p class="card__label">Role 04</p>
                         <h3 class="card__title">Software Development Intern</h3>
-                        <p class="card__body">
-                            Contribute to MVP development across the patient app, hospital dashboard, and backend queue
-                            logic, with a focus on robustness over features.
-                        </p>
+                        <p class="card__body">Contributing to MVP development across the patient app, hospital dashboard, and backend queue logic.</p>
                     </div>
+
                 </div>
             </div>
         </section>
+
 
         <!-- Application Form -->
         <section class="section--light">
@@ -173,129 +147,155 @@
                         </p>
                     </div>
 
-                    <div class="observe-fade">
-                        <div class="card">
-                            <form id="internForm" style="padding: var(--space-sm) 0 0;">
+                    <div id="intern-form-area" class="observe-fade">
+                        <form id="internForm">
 
-                                <!-- Group 1 — Basic Information -->
-                                <div class="intern-group">
-                                    <p class="intern-group__label">Basic Information</p>
-                                    <div class="form-group">
-                                        <label for="internName">Full Name</label>
-                                        <input type="text" id="internName" name="name" placeholder="Your full name"
-                                            required />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="internEmail">Email Address</label>
-                                        <input type="email" id="internEmail" name="email"
-                                            placeholder="you@college.edu" required />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="internPhone">Phone Number</label>
-                                        <input type="tel" id="internPhone" name="phone"
-                                            placeholder="+91-XXXXXXXXXX" required />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="internCity">City</label>
-                                        <input type="text" id="internCity" name="city"
-                                            placeholder="City you are currently based in" required />
-                                    </div>
+                            <!-- Card 1: Basic Information -->
+                            <div class="card survey-card observe-fade">
+                                <div class="survey-card-header">
+                                    <span class="survey-step-badge">1</span>
+                                    <span class="survey-section-title">Basic Information</span>
                                 </div>
-
-                                <!-- Group 2 — Education -->
-                                <div class="intern-group">
-                                    <p class="intern-group__label">Education</p>
-                                    <div class="form-group">
-                                        <label for="internCollege">College / University</label>
-                                        <input type="text" id="internCollege" name="college"
-                                            placeholder="Name of your college or university" required />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="internDegree">Degree / Programme</label>
-                                        <input type="text" id="internDegree" name="degree"
-                                            placeholder="e.g., BTech CSE, MBBS, BBA" required />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="internYearOfStudy">Year of Study</label>
-                                        <select id="internYearOfStudy" name="yearOfStudy" required>
-                                            <option value="" disabled selected>Select your current year</option>
-                                            <option value="1st Year">1st Year</option>
-                                            <option value="2nd Year">2nd Year</option>
-                                            <option value="3rd Year">3rd Year</option>
-                                            <option value="4th Year">4th Year</option>
-                                            <option value="Postgraduate">Postgraduate</option>
-                                        </select>
-                                    </div>
+                                <h3 class="survey-card__heading">Tell us about yourself</h3>
+                                <p class="survey-card__desc">Your contact details so we can reach you.</p>
+                                <div class="form-group">
+                                    <label for="internName">Full Name</label>
+                                    <input type="text" id="internName" name="name" placeholder="Your full name"
+                                        required />
                                 </div>
-
-                                <!-- Group 3 — Internship Details -->
-                                <div class="intern-group">
-                                    <p class="intern-group__label">Internship Details</p>
-                                    <div class="form-group">
-                                        <label for="internRole">Role Applying For</label>
-                                        <select id="internRole" name="role" required>
-                                            <option value="" disabled selected>Select a role</option>
-                                            <option value="Healthcare Research Intern">Healthcare Research Intern</option>
-                                            <option value="Product Intern">Product Intern</option>
-                                            <option value="Operations Intern">Operations Intern</option>
-                                            <option value="Software Development Intern">Software Development Intern</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="internAvailability">Availability</label>
-                                        <select id="internAvailability" name="availability" required>
-                                            <option value="" disabled selected>Select availability</option>
-                                            <option value="Part-time">Part-time</option>
-                                            <option value="Full-time">Full-time</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="internDuration">Expected Duration</label>
-                                        <select id="internDuration" name="duration">
-                                            <option value="" disabled selected>Select duration</option>
-                                            <option value="1 Month">1 Month</option>
-                                            <option value="2 Months">2 Months</option>
-                                            <option value="3 Months">3 Months</option>
-                                            <option value="6 Months">6 Months</option>
-                                        </select>
-                                    </div>
+                                <div class="form-group">
+                                    <label for="internEmail">Email Address</label>
+                                    <input type="email" id="internEmail" name="email"
+                                        placeholder="you@college.edu" required />
                                 </div>
-
-                                <!-- Group 4 — Professional Links -->
-                                <div class="intern-group">
-                                    <p class="intern-group__label">Professional Links</p>
-                                    <div class="form-group">
-                                        <label for="internLinkedIn">LinkedIn Profile</label>
-                                        <input type="url" id="internLinkedIn" name="linkedIn"
-                                            placeholder="https://linkedin.com/in/yourprofile" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="internGithub">GitHub or Portfolio (optional)</label>
-                                        <input type="url" id="internGithub" name="github"
-                                            placeholder="https://github.com/yourusername" />
-                                    </div>
+                                <div class="form-group">
+                                    <label for="internPhone">Phone Number</label>
+                                    <input type="tel" id="internPhone" name="phone"
+                                        placeholder="+91-XXXXXXXXXX" required />
                                 </div>
-
-                                <!-- Group 5 — Short Statement -->
-                                <div class="intern-group">
-                                    <p class="intern-group__label">Short Statement</p>
-                                    <div class="form-group">
-                                        <label for="internStatement">Why do you want to work in a healthcare
-                                            startup?</label>
-                                        <textarea id="internStatement" name="statement" required
-                                            placeholder="Tell us what draws you to this problem and what you'd bring to an early-stage team. 150–300 words."></textarea>
-                                    </div>
+                                <div class="form-group">
+                                    <label for="internCity">City</label>
+                                    <input type="text" id="internCity" name="city"
+                                        placeholder="City you are currently based in" required />
                                 </div>
+                            </div>
 
-                                <button type="submit" class="btn btn--primary"
-                                    style="width: 100%; font-size: 0.95rem; padding: 0.9rem 1.5rem;">
+                            <!-- Card 2: Education -->
+                            <div class="card survey-card observe-fade">
+                                <div class="survey-card-header">
+                                    <span class="survey-step-badge">2</span>
+                                    <span class="survey-section-title">Education</span>
+                                </div>
+                                <h3 class="survey-card__heading">Your academic background</h3>
+                                <p class="survey-card__desc">Tell us where you study and what you are studying.</p>
+                                <div class="form-group">
+                                    <label for="internCollege">College / University</label>
+                                    <input type="text" id="internCollege" name="college"
+                                        placeholder="Name of your college or university" required />
+                                </div>
+                                <div class="form-group">
+                                    <label for="internDegree">Degree / Programme</label>
+                                    <input type="text" id="internDegree" name="degree"
+                                        placeholder="e.g., BTech CSE, MBBS, BBA" required />
+                                </div>
+                                <div class="form-group">
+                                    <label for="internYearOfStudy">Year of Study</label>
+                                    <select id="internYearOfStudy" name="yearOfStudy" required>
+                                        <option value="" disabled selected>Select your current year</option>
+                                        <option value="1st Year">1st Year</option>
+                                        <option value="2nd Year">2nd Year</option>
+                                        <option value="3rd Year">3rd Year</option>
+                                        <option value="4th Year">4th Year</option>
+                                        <option value="Postgraduate">Postgraduate</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Card 3: Internship Details -->
+                            <div class="card survey-card observe-fade">
+                                <div class="survey-card-header">
+                                    <span class="survey-step-badge">3</span>
+                                    <span class="survey-section-title">Internship Details</span>
+                                </div>
+                                <h3 class="survey-card__heading">What are you looking for?</h3>
+                                <p class="survey-card__desc">Help us match you to the right role and schedule.</p>
+                                <div class="form-group">
+                                    <label for="internRole">Role Applying For</label>
+                                    <select id="internRole" name="role" required>
+                                        <option value="" disabled selected>Select a role</option>
+                                        <option value="Healthcare Research Intern">Healthcare Research Intern</option>
+                                        <option value="Product Intern">Product Intern</option>
+                                        <option value="Operations Intern">Operations Intern</option>
+                                        <option value="Software Development Intern">Software Development Intern</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="internAvailability">Availability</label>
+                                    <select id="internAvailability" name="availability" required>
+                                        <option value="" disabled selected>Select availability</option>
+                                        <option value="Part-time">Part-time</option>
+                                        <option value="Full-time">Full-time</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="internDuration">Expected Duration</label>
+                                    <select id="internDuration" name="duration">
+                                        <option value="" disabled selected>Select duration</option>
+                                        <option value="1 Month">1 Month</option>
+                                        <option value="2 Months">2 Months</option>
+                                        <option value="3 Months">3 Months</option>
+                                        <option value="6 Months">6 Months</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Card 4: Professional Links -->
+                            <div class="card survey-card observe-fade">
+                                <div class="survey-card-header">
+                                    <span class="survey-step-badge">4</span>
+                                    <span class="survey-section-title">Professional Links</span>
+                                </div>
+                                <h3 class="survey-card__heading">Your online presence</h3>
+                                <p class="survey-card__desc">Optional but helpful for us to understand your work.</p>
+                                <div class="form-group">
+                                    <label for="internLinkedIn">LinkedIn Profile <span class="label-optional">(optional)</span></label>
+                                    <input type="url" id="internLinkedIn" name="linkedIn"
+                                        placeholder="https://linkedin.com/in/yourprofile" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="internGithub">GitHub or Portfolio <span class="label-optional">(optional)</span></label>
+                                    <input type="url" id="internGithub" name="github"
+                                        placeholder="https://github.com/yourusername" />
+                                </div>
+                            </div>
+
+                            <!-- Card 5: Short Statement -->
+                            <div class="card survey-card observe-fade">
+                                <div class="survey-card-header">
+                                    <span class="survey-step-badge">5</span>
+                                    <span class="survey-section-title">Short Statement</span>
+                                </div>
+                                <h3 class="survey-card__heading">In your own words</h3>
+                                <p class="survey-card__desc">This is the most important part of your application.</p>
+                                <div class="form-group">
+                                    <label for="internStatement">Why do you want to work in a healthcare
+                                        startup?</label>
+                                    <textarea id="internStatement" name="statement" required
+                                        placeholder="Tell us what draws you to this problem and what you'd bring to an early-stage team. 150–300 words."></textarea>
+                                </div>
+                            </div>
+
+                            <div class="survey-submit-area">
+                                <button type="submit" class="btn btn--primary">
                                     Submit Application
                                 </button>
-                                <p id="internFormMessage"
-                                    style="margin-top: var(--space-md); font-size: 0.9rem; font-weight: 500; text-align: center; display: none;">
-                                </p>
-                            </form>
-                        </div>
+                                <p class="survey-footer-note">We review every application and respond to serious candidates within a few days.</p>
+                            </div>
+
+                            <p id="internFormMessage"
+                                style="margin-top: var(--space-md); font-size: 0.9rem; font-weight: 500; text-align: center; display: none;">
+                            </p>
+                        </form>
                     </div>
 
                 </div>
