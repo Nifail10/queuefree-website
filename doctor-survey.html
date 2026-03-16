@@ -87,6 +87,26 @@
                                     required />
                             </div>
                             <div class="form-group">
+                                <label for="practiceType">Type of practice</label>
+                                <select id="practiceType">
+                                    <option value="" disabled selected>Select practice type</option>
+                                    <option value="Private clinic">Private clinic</option>
+                                    <option value="Multispeciality hospital">Multispeciality hospital</option>
+                                    <option value="Government hospital">Government hospital</option>
+                                    <option value="Medical college hospital">Medical college hospital</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="appointmentType">Do you work with fixed appointments or mostly walk-in patients?</label>
+                                <select id="appointmentType">
+                                    <option value="" disabled selected>Select appointment type</option>
+                                    <option value="Mostly walk-in">Mostly walk-in</option>
+                                    <option value="Mostly appointment based">Mostly appointment based</option>
+                                    <option value="Mix of both">Mix of both</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
                                 <label for="patientsPerDay">Average number of patients seen per day</label>
                                 <select id="patientsPerDay" required>
                                     <option value="" disabled selected>Select an option</option>
@@ -146,6 +166,27 @@
                                     <option value="No">No</option>
                                 </select>
                             </div>
+                            <div class="form-group">
+                                <label for="delayReason">What is the most common reason for consultation delays?</label>
+                                <select id="delayReason">
+                                    <option value="" disabled selected>Select a reason</option>
+                                    <option value="Emergency patients">Emergency patients</option>
+                                    <option value="Long consultations">Long consultations</option>
+                                    <option value="Late patient arrivals">Late patient arrivals</option>
+                                    <option value="Administrative delays">Administrative delays</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="missedTurn">What happens if a patient misses their turn?</label>
+                                <select id="missedTurn">
+                                    <option value="" disabled selected>Select an outcome</option>
+                                    <option value="They wait until the end of the queue">They wait until the end of the queue</option>
+                                    <option value="They are reinserted later">They are reinserted later</option>
+                                    <option value="They are skipped completely">They are skipped completely</option>
+                                    <option value="Depends on situation">Depends on situation</option>
+                                </select>
+                            </div>
                         </div>
 
                         <!-- Card 3: QueueFree Relevance -->
@@ -175,6 +216,28 @@
                                     <option value="Not at this stage">Not at this stage</option>
                                 </select>
                             </div>
+                            <div class="form-group">
+                                <label for="interruptionHelp">Would real-time queue visibility help reduce interruptions from patients asking about their turn?</label>
+                                <select id="interruptionHelp">
+                                    <option value="" disabled selected>Select your view</option>
+                                    <option value="Yes, significantly">Yes, significantly</option>
+                                    <option value="Probably yes">Probably yes</option>
+                                    <option value="Unsure">Unsure</option>
+                                    <option value="Probably not">Probably not</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="usefulFeature">What feature would be most useful in a queue management system?</label>
+                                <select id="usefulFeature">
+                                    <option value="" disabled selected>Select a feature</option>
+                                    <option value="Live queue status for patients">Live queue status for patients</option>
+                                    <option value="Estimated waiting time">Estimated waiting time</option>
+                                    <option value="SMS or phone notifications">SMS or phone notifications</option>
+                                    <option value="Reception dashboard">Reception dashboard</option>
+                                    <option value="All of the above">All of the above</option>
+                                </select>
+                            </div>
                         </div>
 
                         <!-- Card 4: Optional Contact -->
@@ -186,6 +249,10 @@
                             <div class="form-group">
                                 <label for="hospital">Hospital or Clinic Name</label>
                                 <input type="text" id="hospital" placeholder="Name of your hospital or clinic" />
+                            </div>
+                            <div class="form-group">
+                                <label for="additionalComments">Any additional comments about patient waiting experience in your OPD? <span class="label-optional">(optional)</span></label>
+                                <textarea id="additionalComments" placeholder="Share any observations or suggestions about your OPD waiting experience..."></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="contactEmail">Contact Email</label>
@@ -275,6 +342,13 @@
                 var openToTesting = document.getElementById("openToTesting").value.trim();
                 var hospital = document.getElementById("hospital").value.trim();
                 var contactEmail = document.getElementById("contactEmail").value.trim();
+                var practiceType = document.getElementById('practiceType').value.trim();
+                var appointmentType = document.getElementById('appointmentType').value.trim();
+                var delayReason = document.getElementById('delayReason').value.trim();
+                var missedTurn = document.getElementById('missedTurn').value.trim();
+                var interruptionHelp = document.getElementById('interruptionHelp').value.trim();
+                var usefulFeature = document.getElementById('usefulFeature').value.trim();
+                var additionalComments = document.getElementById('additionalComments').value.trim();
 
                 var valid = true;
                 if (!specialty) { addInlineError(document.getElementById("specialty"), "Please enter your specialty."); valid = false; }
@@ -307,6 +381,13 @@
                             openToTesting,
                             hospital,
                             contactEmail,
+                            practiceType,
+                            appointmentType,
+                            delayReason,
+                            missedTurn,
+                            interruptionHelp,
+                            usefulFeature,
+                            additionalComments,
                         }),
                     });
 

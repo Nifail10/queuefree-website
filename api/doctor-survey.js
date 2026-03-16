@@ -32,6 +32,13 @@ module.exports = async function handler(req, res) {
     openToTesting,
     hospital,
     contactEmail,
+    practiceType,
+    appointmentType,
+    delayReason,
+    missedTurn,
+    interruptionHelp,
+    usefulFeature,
+    additionalComments,
   } = body;
 
   // Required field validation
@@ -65,6 +72,8 @@ DOCTOR SURVEY RESPONSE — QUEUEFREE
 
 PRACTICE DETAILS
 Specialty:                        ${specialty}
+Type of Practice:                 ${practiceType || 'Not answered'}
+Appointment Type:                 ${appointmentType || 'Not answered'}
 Average Patients Per Day:         ${patientsPerDay}
 Average Consultation Time:        ${consultationTime}
 
@@ -72,13 +81,18 @@ CURRENT QUEUE SETUP
 Queue Management Method:          ${queueMethod}
 Patients Ask About Their Turn:    ${patientsAsk}
 Crowding Affects Workflow:        ${crowdingAffects}
+Most Common Delay Reason:         ${delayReason || 'Not answered'}
+If Patient Misses Turn:           ${missedTurn || 'Not answered'}
 
 QUEUEFREE RELEVANCE
 Real-Time Transparency Would Help: ${transparencyHelps}
 Open To Testing QueueFree:        ${openToTesting}
+Interruptions Would Reduce:       ${interruptionHelp || 'Not answered'}
+Most Useful Feature:              ${usefulFeature || 'Not answered'}
 
 OPTIONAL CONTACT
 Hospital / Clinic:  ${hospital || 'Not provided'}
+Additional Comments:              ${additionalComments || 'Not provided'}
 Contact Email:      ${contactEmail || 'Not provided'}
   `.trim();
 
